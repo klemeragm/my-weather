@@ -15,7 +15,8 @@ weatherForm.addEventListener("submit", async (event) => { //define the call
         showWeather(weatherData);
     }
 })
- 
+
+
 async function searchWeather(city) { 
   const appKey = 'OPEN_WEATHER_API_KEY'; 
   let lang ='pt_br';
@@ -26,7 +27,7 @@ async function searchWeather(city) {
     const weatherData = await weatherResponse.json();
     return weatherData;
   } else {
-    console.log(error,"Erro ao chamar a API de Clima");
+     console.error("Erro ao chamar a API de Clima");
      return null;
     }
 }
@@ -49,6 +50,6 @@ function showWeather(weather) {
         <img src = "${iconURL}" alt= "${description}" />
         </div>
         `;
-    weatherInfo.innerHtml = weatherHtml;
+       weatherInfo.innerHtml = weatherHtml;
    }
 
