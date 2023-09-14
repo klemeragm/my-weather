@@ -2,7 +2,7 @@
 const weatherForm = document.getElementById("weather-form");
 const weatherInfo = document.getElementById("weather-info");
 
-weatherForm.addEventListener("submit", async (event) => {
+weatherForm.addEventListener("submit", async (event) => { //define the call 
     event.preventDefault();
 
     const city = event.target[0].value;
@@ -16,8 +16,8 @@ weatherForm.addEventListener("submit", async (event) => {
     }
 })
  
-async function searchWeather(city) { //define de call to api parameters
-  const appKey = '9ebcc306f5929814e91b7bd50a43528b'; 
+async function searchWeather(city) { 
+  const appKey = 'OPEN_WEATHER_API_KEY'; 
   let lang ='pt_br';
   const units = 'metric';
   const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appKey}&lang=${lang}&units=${units}`);
@@ -32,8 +32,7 @@ async function searchWeather(city) { //define de call to api parameters
 }
 
 function showWeather(weather) {
-      console.log(weather);
-    
+      console.log(weather); //check the call in the debug
       let temperature = weather.main.temp;
       const description = weather.weather[0].descripion;
       const city = weather.name;
