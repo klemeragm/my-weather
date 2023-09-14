@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+:root {
+  --background-color: #121212;
+  --color-text: white;  
+  --background-color-hover: white; /* #0c2c7b*/     
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+   color: var(--color-text);
+   background-color: var(--background-color);
+}
+
+
+h1 {
+   color: var(--color-text);
+   margin-top: 31px;
+   margin-bottom: 8px;
+}
+
+p {
+   color: var(--color-text);
+   margin-left: auto; 
+   margin-right: auto;
+}
+
+#icon {   
+   width: 15px;
+   height: 15px;
+   cursor: pointer;
+   stroke: #FFFFFF ; /*#121212 white  */
+   display: block;
+   margin: auto;
+   margin-top: 15px;
+   /*margin-right: 320px; 
+   margin-left: auto;*/
+}
+
+.container {
+   background-color: var(--background-color);
+   text-align: center;
+   width: 320px;
+   margin-top: 41px;
+   margin-left: auto; 
+   margin-right: auto;
+}
+
+.container .weather-info  {
+   text-align: center;
+   width: 320px;
+   background-color: auto;
+}
+
+
