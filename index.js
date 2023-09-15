@@ -11,31 +11,32 @@ weatherForm.addEventListener("submit", async (event) => { //define the call
 
     event.target[0].value = '';
 
-    if(searchWeather){
+    if(searchWeather.ok){
         showWeather(weatherData);
+    } else {
+       console.error(error,"Erro ao buscar!")
     }
 })
 
-
 async function searchWeather(city) { 
-  const appKey = 'OPEN_WEATHER_API_KEY'; 
-  let lang ='pt_br';
-  const units = 'metric';
-  const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appKey}&lang=${lang}&units=${units}`);
+    const appKey = 'OPEN_WEATHER_API_KEY'; 
+    let lang ='pt_br';
+    const units = 'metric';
+    const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appKey}&lang=${lang}&units=${units}`);
   
   if(weatherResponse.ok){
     const weatherData = await weatherResponse.json();
     return weatherData;
   } else {
-     console.error("Erro ao chamar a API de Clima");
-     return null;
-    }
+    console.error("Erro ao chamar a API de Clima");
+    return null;
+  }
 }
 
 function showWeather(weather) {
       console.log(weather); //check the call in the debug
       let temperature = weather.main.temp;
-      const description = weather.weather[0].descripion;
+      const description = weather.weather[0].description;
       const city = weather.name;
       const iconCode = weather.weather[0].icon;
       const iconURL = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
@@ -50,6 +51,5 @@ function showWeather(weather) {
         <img src = "${iconURL}" alt= "${description}" />
         </div>
         `;
-       weatherInfo.innerHtml = weatherHtml;
+      weatherInfo.innerHtml = weatherHtml;
    }
-

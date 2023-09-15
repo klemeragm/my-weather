@@ -51,10 +51,15 @@ p {
    margin-right: auto;
 }
 
-.container .weather-info  {
+.container .weather-screen  {
    text-align: center;
    width: 320px;
    background-color: auto;
 }
 
+.container .weather-screen .itens  {
+   text-align: center;
+   width: 320px;
+   background-color: gray;
+}
 
