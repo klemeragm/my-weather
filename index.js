@@ -14,21 +14,21 @@ weatherForm.addEventListener("submit", async (event) => { //define the call
     if(searchWeather.ok){
         showWeather(weatherData);
     } else {
-       console.error(error,"Erro ao buscar!")
+       console.error(error);
     }
 })
 
 async function searchWeather(city) { 
-    const appKey = 'OPEN_WEATHER_API_KEY'; 
+    const apiKey = 'OPEN_WEATHER_API_KEY'; 
     let lang ='pt_br';
     const units = 'metric';
-    const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appKey}&lang=${lang}&units=${units}`);
+    const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=${lang}&units=${units}`);
   
   if(weatherResponse.ok){
     const weatherData = await weatherResponse.json();
     return weatherData;
   } else {
-    console.error("Erro ao chamar a API de Clima");
+    console.error("Erro ao chamar a API de Clima",error);
     return null;
   }
 }

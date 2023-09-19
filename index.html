@@ -7,16 +7,22 @@
   <title>My-Weather-API</title>
 </head>
 <body>
-    <div class="container"> <!--Will repair and refactore -->
+  
+  <div class="container"> <!--Will repair and refactore -->
       <h1>Show me the Weather of my City</h1>
       <form id="weather-form"> 
       City Name:<input type="text" name="city" id="city" placeholder="Nome da cidade" required>
-      <button type="submit" id="searchWeather">🔍</button>  
+      <button type="submit" id="searchWeather">🔍</button>
+      <label class="switch-theme">
+        <input id="checkbox" type="checkbox">
+        <span class="slider"></span>
+       </label>  
     </form>  
    <div class="weather-screen" id="weather-info"></div> 
-   </div>
+   </div> 
 
-  <!-- <script src=""></script> -->
+
     <script src="index.js"></script>
+    <script src="change-theme.js"></script>
 </body>
 </html>
