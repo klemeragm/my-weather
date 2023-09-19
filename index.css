@@ -30,6 +30,12 @@ p {
    margin-right: auto;
 }
 
+.light-theme {
+   --background-color: white;
+   --color-text: black;    
+   --background-color-hover: #b6cccc;
+}
+
 #icon {   
    width: 15px;
    height: 15px;

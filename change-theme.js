@@ -12,13 +12,15 @@ let localData = localStorage.getItem("theme");
 
 // Se o valor estiver salvo como dark, a página será carregada no modo dark
 if (localData == "dark") {
-    icon.src = "./img/day.png";
+    icon.src = "./img/cloud-svgrepo-com.svg";
     document.body.classList.remove("light-theme");
 }
 
+
+
 // Se o valor estiver salvo como light, a página será carregada no modo light
 else if(localData == "light") {
-    icon.src = "./img/night.png";
+    icon.src = "./img/cloud-svgrepo-com-dark.svg";
     document.body.classList.add("light-theme");
 }
 
@@ -27,7 +29,7 @@ icon.onclick = function() {
     document.body.classList.toggle("light-theme");
 
     if(document.body.classList.contains("light-theme")) {
-        icon.src= "./images/night.png";
+        icon.src= "./images/cloud-svgrepo-com-dark.svg";
         localStorage.setItem("theme", "light");
     }
     else{
